@@ -12,7 +12,7 @@ def healthcheck():
             mimetype='application/json'
     )
 
-    app.logger.info('Status request successfull')
+    #app.logger.info('Status request successfull')
     return response
 
 @app.route('/metrics')
@@ -28,12 +28,13 @@ def metrics():
 
 @app.route("/")
 def hello():
-    app.logger.info('Main request successfull')
+    #app.logger.info('Main request successfull')
 
-    return "Hello World!"
+    return "Hello World - V1"
 
 if __name__ == "__main__":
     ## stream logs to a file
-    logging.basicConfig(filename='app.log',level=logging.DEBUG)
+    #logging.basicConfig(filename='app.log',level=logging.DEBUG)
     
-    app.run(host='0.0.0.0')
+    # app.run(host='0.0.0.0','4321')
+    app.run('0.0.0.0','9999')
